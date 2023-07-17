@@ -4,8 +4,8 @@
   <title>Semester Week</title>
 </head>
 <body>
-  <h1 style="border: 2px dashed black; padding: 10px; text-align: center; font-family: 'Tw Cen MT', sans-serif;" id="week-display"></h1>
-  <script>
+  <h1 style="border: 2px dashed black; padding: 10px; text-align: center; font-family: 'Tw Cen MT', sans-serif;" id="week-display"></h1> 
+  <script> // [N.B: if you want to change how the box and text looks in terms of styling, do so in the line above]
 
     const semesterStartDate = new Date("2023-07-31T00:00:00+10:00"); // enter the start date of the Semester in AEDT or AEST
 
@@ -16,10 +16,10 @@
       new Date("2023-08-21T00:00:00+10:00"), // enter the start date of Week Four
       new Date("2023-08-28T00:00:00+10:00"), // enter the start date of Week Five
       new Date("2023-09-04T00:00:00+10:00"), // enter the start date of Week Six
-      new Date("2023-09-11T00:00:00+10:00"), // enter the start date of Week Seven [N.B: the Semester Recess and/or AEDT/AEST
-      new Date("2023-09-18T00:00:00+10:00"), // enter the start date of Week Eight
-      new Date("2023-09-25T00:00:00+10:00"), // enter the start date of the Semester Recess
-      new Date("2023-10-02T00:00:00+11:00"), // enter the start date of Week Nine (and AEDT starts)
+      new Date("2023-09-11T00:00:00+10:00"), // enter the start date of Week Seven [N.B: the Semester Recess and/or AEDT/AEST may be here too]
+      new Date("2023-09-18T00:00:00+10:00"), // enter the start date of Week Eight [N.B: the Semester Recess and/or AEDT/AEST may be here too]
+      new Date("2023-09-25T00:00:00+10:00"), // enter the start date of the Semester Recess [N.B: the Semester Recess and/or AEDT/AEST may be here too]
+      new Date("2023-10-02T00:00:00+11:00"), // enter the start date of Week Nine [N.B: the Semester Recess and/or AEDT/AEST may be here too]
       new Date("2023-10-09T00:00:00+11:00"), // enter the start date of Week Ten
       new Date("2023-10-16T00:00:00+11:00"), // enter the start date of Week Eleven
       new Date("2023-10-23T00:00:00+11:00"), // enter the start date of Week Twelve
@@ -43,7 +43,7 @@
       return weekNumber;
     };
 
-    const getDayName = (dayNumber) => {
+    const getDayName = (dayNumber) => { // [N.B: in HTML format, the first day in the array is Sunday, but the counter will still name it correctly]
       switch (dayNumber) {
         case 0:
           return "Sunday";
@@ -82,13 +82,13 @@
         case 6:
           return "it is " + dayName + " of Week Six.";
         case 7:
-          return "it is " + dayName + " of Week Seven.";
+          return "it is " + dayName + " of Week Seven."; // depending on when the Semester Recess is, you may need to change the text in the quotation marks
         case 8:
-          return "it is " + dayName + " of Week Eight.";
+          return "it is " + dayName + " of Week Eight."; // depending on when the Semester Recess is, you may need to change the text in the quotation marks
         case 9:
-          return "it is " + dayName + " of the Semester Recess.";
+          return "it is " + dayName + " of the Semester Recess."; // depending on when the Semester Recess is, you may need to change the text in the quotation marks
         case 10:
-          return "it is " + dayName + " of Week Nine.";
+          return "it is " + dayName + " of Week Nine."; // depending on when the Semester Recess is, you may need to change the text in the quotation marks
         case 11:
           return "it is " + dayName + " of Week Ten.";
         case 12:
@@ -114,7 +114,7 @@
     const dayName = getDayName(dayNumber);
     const weekNumber = getWeekNumber(currentDate);
     const weekName = getWeekName(weekNumber);
-    document.getElementById("week-display").innerHTML = "When is it? Right now, " + weekName;
+    document.getElementById("week-display").innerHTML = "When is it? Right now, " + weekName; // [N.B: if you want to change the text preceding the counter, do so here]
   </script>
 </body>
 </html>
