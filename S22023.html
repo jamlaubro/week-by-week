@@ -7,27 +7,27 @@
   <h1 style="border: 2px dashed black; padding: 10px; text-align: center; font-family: 'Tw Cen MT', sans-serif;" id="week-display"></h1>
   <script>
 
-    const semesterStartDate = new Date("2023-07-31T00:00:00+10:00"); // Start of S2 2023 in Sydney, Australia
+    const semesterStartDate = new Date("2023-07-31T00:00:00+10:00"); // enter the start date of the Semester in AEDT or AEST
 
     const weekStartDates = [
-      new Date("2023-07-31T00:00:00+10:00"), // this is Week One
-      new Date("2023-08-07T00:00:00+10:00"),
-      new Date("2023-08-14T00:00:00+10:00"),
-      new Date("2023-08-21T00:00:00+10:00"),
-      new Date("2023-08-28T00:00:00+10:00"),
-      new Date("2023-09-04T00:00:00+10:00"),
-      new Date("2023-09-11T00:00:00+10:00"),
-      new Date("2023-09-18T00:00:00+10:00"), // this is Week Eight
-      new Date("2023-09-25T00:00:00+10:00"), // this is the Semester Recess
-      new Date("2023-10-02T00:00:00+11:00"), // this is Week Nine (and AEDT starts)
-      new Date("2023-10-09T00:00:00+11:00"),
-      new Date("2023-10-16T00:00:00+11:00"),
-      new Date("2023-10-23T00:00:00+11:00"),
-      new Date("2023-10-30T00:00:00+11:00"), // this is Week Thirteen
-      new Date("2023-11-06T00:00:00+11:00"), // this is STUVAC
-      new Date("2023-11-13T00:00:00+11:00"), // this is Week One of the Exam Period
-      new Date("2023-11-20T00:00:00+11:00"), // this is Week Two of the Exam Period
-      new Date("2023-11-27T00:00:00+11:00"), // this is Week Two of the Exam Period
+      new Date("2023-07-31T00:00:00+10:00"), // enter the start date of Week One
+      new Date("2023-08-07T00:00:00+10:00"), // enter the start date of Week Two
+      new Date("2023-08-14T00:00:00+10:00"), // enter the start date of Week Three
+      new Date("2023-08-21T00:00:00+10:00"), // enter the start date of Week Four
+      new Date("2023-08-28T00:00:00+10:00"), // enter the start date of Week Five
+      new Date("2023-09-04T00:00:00+10:00"), // enter the start date of Week Six
+      new Date("2023-09-11T00:00:00+10:00"), // enter the start date of Week Seven [N.B: the Semester Recess and/or AEDT/AEST
+      new Date("2023-09-18T00:00:00+10:00"), // enter the start date of Week Eight
+      new Date("2023-09-25T00:00:00+10:00"), // enter the start date of the Semester Recess
+      new Date("2023-10-02T00:00:00+11:00"), // enter the start date of Week Nine (and AEDT starts)
+      new Date("2023-10-09T00:00:00+11:00"), // enter the start date of Week Ten
+      new Date("2023-10-16T00:00:00+11:00"), // enter the start date of Week Eleven
+      new Date("2023-10-23T00:00:00+11:00"), // enter the start date of Week Twelve
+      new Date("2023-10-30T00:00:00+11:00"), // enter the start date of Week Thirteen
+      new Date("2023-11-06T00:00:00+11:00"), // enter the start date of STUVAC
+      new Date("2023-11-13T00:00:00+11:00"), // enter the start of Week One of the Exam Period
+      new Date("2023-11-20T00:00:00+11:00"), // enter the start of Week Two of the Exam Period
+      new Date("2023-11-27T00:00:00+11:00"), // enter the start of the following week (i.e. end of the Semester)
     ];
 
     const getWeekNumber = (date) => {
