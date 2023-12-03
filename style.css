@@ -1,0 +1,137 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    display: flex;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    color: rgb(55, 53, 47);
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+p, span, figure {
+    display: inline;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: #e64626;
+}
+
+article {
+    width: 100%;
+    min-width: 300px;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid rgba(55, 53, 47, 0.16);
+    background-color: #fff;
+    margin: 32px;
+    box-shadow:
+      1px 2px 2px hsl(0deg 0% 0% / 0.075),
+      2px 4px 4px hsl(0deg 0% 0% / 0.075),
+      4px 8px 8px hsl(0deg 0% 0% / 0.075),
+      8px 16px 16px hsl(0deg 0% 0% / 0.075),
+      16px 32px 32px hsl(0deg 0% 0% / 0.075);
+}
+
+article > * {
+    gap: 8px;
+    align-items: center;
+    padding: 16px;
+}
+
+header {
+    flex-direction: row;
+    font-size: 1.25em;
+    font-weight: 500;
+}
+
+i {
+    color: rgba(55, 53, 47, 0.8);
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid rgba(55, 53, 47, 0.16);
+    margin: 0 16px;
+    padding: 0;
+}
+
+section {
+    gap: 16px;
+}
+
+section > * {
+    flex-direction: column;
+}
+
+span {
+    font-weight: 500;
+}
+
+figure {
+    flex-direction: column;
+}
+
+blockquote::before{
+    font-family: Georgia;
+    content: "\201C";
+    color: rgba(55, 53, 47, 0.16);
+    font-size: 2em;
+    margin-top: -0.25em;
+    margin-right: 0.1em;
+  }
+
+figure p, figcaption {
+    color: rgba(55, 53, 47, 0.8);
+}
+
+figure p {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+figcaption {
+    font-size: 0.66em;
+    font-weight: 300;
+    justify-content: right;
+}
+
+figcaption a {
+    color: rgba(55, 53, 47, 0.6);
+    text-decoration: none;
+}
+
+figcaption a:hover {
+    color: rgba(55, 53, 47, 0.4);
+}
+
+.progress-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.25em;
+}
