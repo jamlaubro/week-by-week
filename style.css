@@ -36,17 +36,11 @@ a {
 
 article {
     width: 100%;
-    min-width: 300px;
+    min-width: 100px;
     flex-direction: column;
     border-radius: 4px;
     border: 1px solid rgba(55, 53, 47, 0.16);
     background-color: #fff;
-    box-shadow:
-      1px 2px 2px hsl(0deg 0% 0% / 0.075),
-      2px 4px 4px hsl(0deg 0% 0% / 0.075),
-      4px 8px 8px hsl(0deg 0% 0% / 0.075),
-      8px 16px 16px hsl(0deg 0% 0% / 0.075),
-      16px 32px 32px hsl(0deg 0% 0% / 0.075);
 }
 
 article > * {
