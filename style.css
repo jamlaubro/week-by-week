@@ -56,12 +56,6 @@ article {
     background-color: var(--bg);
 }
 
-@media (prefers-color-scheme: dark) {
-    article {
-        border-color: rgba(255, 255, 255, 0.13);
-    }
-}
-
 article > * {
     gap: 8px;
     align-items: center;
