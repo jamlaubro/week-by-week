@@ -2,9 +2,11 @@
 
 A simple widget for keeping track of the academic calendar.
 
+Made by [@jamlaubro](https://github.com/jamlaubro) and expanded by [@taylorsudo](https://github.com/taylorsudo).
+
 ## Changes
 
-- Added dates for 2024 in `2024.js`, combining Semesters 1 and 2 into the same variable
+- Added dates for 2024 in `script.js`, combining Semesters 1 and 2 into the same variable
 - Added "lessbold" version of `day-and-week-banner.html`
 - All widgets can now be updated automatically within `script.js`
 - Added dark mode to `day-and-week-banner.html` that activates based on system settings
