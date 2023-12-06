@@ -1,6 +1,6 @@
 const options = { timeZone: "Australia/Sydney" };
 const sydneyDate = new Intl.DateTimeFormat("en-US", options).format(new Date());
-const currentDate = new Date(sydneyDate); // N.B: Test by copying a date here
+const currentDate = new Date(sydneyDate);
 const dayNumber = currentDate.getDay();
 
 // Change semester start dates here
@@ -9,6 +9,7 @@ const semester2 = new Date("2024-07-29T00:00:00+10:00");
 
 // Check which semester it is
 if (currentDate < semester2) { // If current date is before start of Semester 2
+    var semester = "Semester One";
     var semesterStartDate = semester1;
     var weekStartDates = [
         new Date("2024-02-19T00:00:00+11:00"), // S1 Week 1
@@ -31,6 +32,7 @@ if (currentDate < semester2) { // If current date is before start of Semester 2
         new Date("2024-06-17T00:00:00+10:00"), // End of Semester 1
     ];
 } else { // Else if current date is after start of Semester 2
+    var semester = "Semester Two";
     var semesterStartDate = semester2;
     var weekStartDates = [
         new Date("2024-07-29T00:00:00+10:00"), // S2 Week 1
@@ -56,18 +58,26 @@ if (currentDate < semester2) { // If current date is before start of Semester 2
 
 const getWeekNumber = (date) => {
     let weekNumber;
-    const time = date.getTime() - semesterStartDate.getTime();
-    if (date < weekStartDates[0]) weekNumber = -1;
-    for (let i = 0; i < 18; i++) {
-        if (date >= weekStartDates[i] && date < weekStartDates[i + 1]) {
-            weekNumber = i + 1;
+
+    if (date < weekStartDates[0]) {
+        weekNumber = -1;
+    } else if (date >= weekStartDates[17]) {
+        weekNumber = 18;
+    } else {
+        // Iterate through weekStartDates to find the week number
+        for (let i = 0; i < 17; i++) {
+            if (date >= weekStartDates[i] && date < weekStartDates[i + 1]) {
+                weekNumber = i + 1;
+                break; // Exit the loop once the week is found
+            }
         }
     }
-    if (date > weekStartDates[17]) weekNumber = 18;
+
     return weekNumber;
 };
 
-const getDayName = (dayNumber) => { // N.B: in HTML format, the first day in the array is Sunday, but the counter will still name it correctly
+
+const getDayName = (dayNumber) => { // [N.B: in HTML format, the first day in the array is Sunday, but the counter will still name it correctly]
     switch (dayNumber) {
         case 0:
             return "Sunday";
@@ -86,9 +96,12 @@ const getDayName = (dayNumber) => { // N.B: in HTML format, the first day in the
     }
 }
 
+// Get week names for Semesters One and Two
 const getWeekName = (weekNumber) => {
-    if (weekNumber < 0 || weekNumber > 17 || typeof weekNumber === 'undefined') {
-        return "break time.";
+    if (weekNumber < 0) {
+        return "it is before " + semester + " has started.";
+    } else if (weekNumber >= 18) {
+        return "it is after " + semester + " has finished.";
     } else if (semesterStartDate == semester1) {
         switch (weekNumber) {
             case 1:
@@ -166,13 +179,12 @@ const getWeekName = (weekNumber) => {
     }
 };
 
-// Display week name
 const dayName = getDayName(dayNumber);
 const weekNumber = getWeekNumber(currentDate);
 const weekName = getWeekName(weekNumber);
-document.getElementById("week-display").innerHTML = weekName;
+document.getElementById("week-display").innerHTML = weekName; // [N.B: if you want to change the text preceding the counter, do so here]
 
-// Display message
+// Optionally display message
 let message;
 
 if (weekName.includes("Week One")) {
@@ -215,7 +227,7 @@ if (weekName.includes("Week One")) {
 
 document.getElementById("message-display").innerHTML = message;
 
-// Update progress bar
+// Optionally display/update progress bar
 const updateProgressBar = () => {
     const progressCircle = document.getElementById('progress-circle');
     const percentage = document.getElementById('percentage');

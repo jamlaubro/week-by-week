@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Semester Week</title>
+</head>
+<body>
+  <h1 style="border: 2px dashed black; padding: 10px; text-align: center; font-family: 'Tw Cen MT', sans-serif;" id="week-display"></h1>
+  <script>
+
+    const semesterStartDate = new Date("2022-02-20T00:00:00+11:00"); // Start of S1 2023 in Sydney, Australia
+
+    const weekStartDates = [
+      new Date("2023-02-20T00:00:00+11:00"), // this is Week One
+      new Date("2023-02-27T00:00:00+11:00"),
+      new Date("2023-03-06T00:00:00+11:00"),
+      new Date("2023-03-13T00:00:00+11:00"),
+      new Date("2023-03-20T00:00:00+11:00"),
+      new Date("2023-03-27T00:00:00+11:00"),
+      new Date("2023-04-03T00:00:00+10:00"), // this is Week Seven (and AEDT has ended)
+      new Date("2023-04-10T00:00:00+10:00"), // this is the Semester Recess
+      new Date("2023-04-17T00:00:00+10:00"), // this is Week Eight
+      new Date("2023-04-24T00:00:00+10:00"),
+      new Date("2023-05-01T00:00:00+10:00"),
+      new Date("2023-05-08T00:00:00+10:00"),
+      new Date("2023-05-15T00:00:00+10:00"),
+      new Date("2023-05-22T00:00:00+10:00"), // this is Week Thirteen
+      new Date("2023-05-29T00:00:00+10:00"), // this is STUVAC
+      new Date("2023-06-05T00:00:00+10:00"), // this is Week One of the Exam Period
+      new Date("2023-06-12T00:00:00+10:00"), // this is Week Two of the Exam Period
+      new Date("2023-06-19T00:00:00+10:00"), // this is Week Two of the Exam Period
+    ];
+
+    const getWeekNumber = (date) => {
+      let weekNumber;
+      const time = date.getTime() - semesterStartDate.getTime();
+      if(date < weekStartDates[0]) weekNumber = -1; 
+      for(let i=0; i<18; i++){
+        if(date >= weekStartDates[i] && date < weekStartDates[i+1]) {
+          weekNumber = i+1;
+        }
+      } 
+      if(date > weekStartDates[17]) weekNumber = 18;
+      return weekNumber;
+    };
+
+    const getDayName = (dayNumber) => {
+      switch (dayNumber) {
+        case 0:
+          return "Sunday";
+        case 1:
+          return "Monday";
+        case 2:
+          return "Tuesday";
+        case 3:
+          return "Wednesday";
+        case 4:
+          return "Thursday";
+        case 5:
+          return "Friday";
+        case 6:
+          return "Saturday";
+      }
+    }
+
+    const getWeekName = (weekNumber) => { 
+      if (weekNumber < 0) {
+        return "it is before Semester One has started.";
+      } else if (weekNumber >= 18) {
+        return "it is after Semester One has finished.";
+      } else {
+      switch (weekNumber) {
+        case 1:
+          return "it is " + dayName + " of Week One.";
+        case 2:
+          return "it is " + dayName + " of Week Two.";
+        case 3:
+          return "it is " + dayName + " of Week Three.";
+        case 4:
+          return "it is " + dayName + " of Week Four.";
+        case 5:
+          return "it is " + dayName + " of Week Five.";
+        case 6:
+          return "it is " + dayName + " of Week Six.";
+        case 7:
+          return "it is " + dayName + " of Week Seven.";
+        case 8:
+          return "it is " + dayName + " of the Semester Recess.";
+        case 9:
+          return "it is " + dayName + " of Week Eight.";
+        case 10:
+          return "it is " + dayName + " of Week Nine.";
+        case 11:
+          return "it is " + dayName + " of Week Ten.";
+        case 12:
+          return "it is " + dayName + " of Week Eleven.";
+        case 13:
+          return "it is " + dayName + " of Week Twelve.";
+        case 14:
+          return "it is " + dayName + " of Week Thirteen.";
+        case 15:
+          return "it is " + dayName + " of STUVAC.";
+        case 16:
+          return "it is " + dayName + " of Week One of the Exam Period.";
+        case 17:
+          return "it is " + dayName + " of Week Two of the Exam Period.";
+        }
+      }
+    };
+    
+    const options = {timeZone: "Australia/Sydney"};
+    const sydneyDate = new Intl.DateTimeFormat("en-US", options).format(new Date());
+    const currentDate = new Date(sydneyDate);
+    const dayNumber = currentDate.getDay();
+    const dayName = getDayName(dayNumber);
+    const weekNumber = getWeekNumber(currentDate);
+    const weekName = getWeekName(weekNumber);
+    document.getElementById("week-display").innerHTML = "When is it? Right now, " + weekName;
+  </script>
+</body>
+</html>
