@@ -99,9 +99,9 @@ const getDayName = (dayNumber) => { // [N.B: in HTML format, the first day in th
 // Get week names for Semesters One and Two
 const getWeekName = (weekNumber) => {
     if (weekNumber < 0) {
-        return "it is before " + semester + " has started.";
+        return "before " + semester + " has started.";
     } else if (weekNumber >= 18) {
-        return "it is after " + semester + " has finished.";
+        return "after " + semester + " has finished.";
     } else if (semesterStartDate == semester1) {
         switch (weekNumber) {
             case 1:
