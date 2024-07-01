@@ -1,0 +1,149 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    /* color: rgb(55, 53, 47); */
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+:root {
+    --text: rgb(55, 53, 47);
+    --bg: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: rgba(255, 255, 255, 0.81);
+        --bg: rgb(37, 37, 37);
+    }
+}
+
+p, span, figure {
+    display: inline;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: #e64626;
+}
+
+article {
+    width: 100%;
+    min-width: 100px;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid rgba(55, 53, 47, 0.16);
+    background-color: var(--bg);
+}
+
+article > * {
+    gap: 8px;
+    align-items: center;
+    padding: 16px;
+}
+
+header {
+    flex-direction: row;
+    font-size: 1.25em;
+    font-weight: 500;
+    color: var(--text);
+}
+
+i {
+    opacity: 0.8;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--text);
+    opacity: 0.16;
+    margin: 0 16px;
+    padding: 0;
+}
+
+section {
+    gap: 16px;
+}
+
+section>* {
+    flex-direction: column;
+}
+
+span {
+    font-weight: 500;
+}
+
+figure {
+    flex-direction: column;
+}
+
+blockquote::before {
+    font-family: Georgia;
+    content: "\201C";
+    font-size: 2em;
+    color: var(--text);
+    opacity: 0.3;
+    margin-top: -0.25em;
+    margin-right: 0.1em;
+}
+
+figure p, figcaption, .percentage {
+    color: var(--text);
+    opacity: 0.8;
+}
+
+figure p {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+figcaption {
+    font-size: 0.66em;
+    font-weight: 300;
+    justify-content: right;
+}
+
+figcaption a {
+    color: var(--text);
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+figcaption a:hover {
+    color: var(--text);
+    opacity: 0.4;
+}
+
+.progress-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.25em;
+}
