@@ -4,55 +4,55 @@ const currentDate = new Date(sydneyDate);
 const dayNumber = currentDate.getDay();
 
 // Change semester start dates here
-const semester1 = new Date("2024-02-19T00:00:00+11:00");
-const semester2 = new Date("2024-07-29T00:00:00+10:00");
+const semester1 = new Date("2025-02-24T00:00:00+11:00");
+const semester2 = new Date("2025-08-04T00:00:00+10:00");
 
 // Check which semester it is
 if (currentDate < semester2) { // If current date is before start of Semester 2
     var semester = "Semester One";
     var semesterStartDate = semester1;
     var weekStartDates = [
-        new Date("2024-02-19T00:00:00+11:00"), // S1 Week 1
-        new Date("2024-02-26T00:00:00+11:00"), // S1 Week 2
-        new Date("2024-03-04T00:00:00+11:00"), // S1 Week 3
-        new Date("2024-03-11T00:00:00+11:00"), // S1 Week 4
-        new Date("2024-03-18T00:00:00+11:00"), // S1 Week 5
-        new Date("2024-03-25T00:00:00+11:00"), // S1 Week 6
-        new Date("2024-04-01T00:00:00+11:00"), // Mid-semester break
-        new Date("2024-04-08T00:00:00+10:00"), // S1 Week 7 (and end of AEDT)
-        new Date("2024-04-15T00:00:00+10:00"), // S1 Week 8
-        new Date("2024-04-22T00:00:00+10:00"), // S1 Week 9
-        new Date("2024-04-29T00:00:00+10:00"), // S1 Week 10
-        new Date("2024-05-06T00:00:00+10:00"), // S1 Week 11
-        new Date("2024-05-13T00:00:00+10:00"), // S1 Week 12
-        new Date("2024-05-20T00:00:00+10:00"), // S1 Week 13
-        new Date("2024-05-27T00:00:00+10:00"), // S1 STUVAC
-        new Date("2024-06-03T00:00:00+10:00"), // S1 Exam Period, Week 1
-        new Date("2024-06-10T00:00:00+10:00"), // S1 Exam Period, Week 2
-        new Date("2024-06-17T00:00:00+10:00"), // End of Semester 1
+        new Date("2025-02-24T00:00:00+11:00"), // S1 Week 1
+        new Date("2025-03-03T00:00:00+11:00"), // S1 Week 2
+        new Date("2025-03-10T00:00:00+11:00"), // S1 Week 3
+        new Date("2025-03-17T00:00:00+11:00"), // S1 Week 4
+        new Date("2025-03-24T00:00:00+11:00"), // S1 Week 5
+        new Date("2025-03-31T00:00:00+11:00"), // S1 Week 6
+        new Date("2025-04-07T00:00:00+11:00"), // S1 Week 7 (and end of AEDT)
+        new Date("2025-04-14T00:00:00+10:00"), // S1 Week 8
+        new Date("2025-04-21T00:00:00+10:00"), // Mid-semester break
+        new Date("2025-04-28T00:00:00+10:00"), // S1 Week 9
+        new Date("2025-05-05T00:00:00+10:00"), // S1 Week 10
+        new Date("2025-05-12T00:00:00+10:00"), // S1 Week 11
+        new Date("2025-05-19T00:00:00+10:00"), // S1 Week 12
+        new Date("2025-05-26T00:00:00+10:00"), // S1 Week 13
+        new Date("2025-06-02T00:00:00+10:00"), // S1 STUVAC
+        new Date("2025-06-09T00:00:00+10:00"), // S1 Exam Period, Week 1
+        new Date("2025-06-16T00:00:00+10:00"), // S1 Exam Period, Week 2
+        new Date("2025-06-23T00:00:00+10:00"), // End of Semester 1
     ];
 } else { // Else if current date is after start of Semester 2
     var semester = "Semester Two";
     var semesterStartDate = semester2;
     var weekStartDates = [
-        new Date("2024-07-29T00:00:00+10:00"), // S2 Week 1
-        new Date("2024-08-05T00:00:00+10:00"), // S2 Week 2
-        new Date("2024-08-12T00:00:00+10:00"), // S2 Week 3
-        new Date("2024-08-19T00:00:00+10:00"), // S2 Week 4
-        new Date("2024-08-26T00:00:00+10:00"), // S2 Week 5
-        new Date("2024-09-02T00:00:00+10:00"), // S2 Week 6
-        new Date("2024-09-09T00:00:00+10:00"), // S2 Week 7
-        new Date("2024-09-16T00:00:00+10:00"), // S2 Week 8
-        new Date("2024-09-23T00:00:00+10:00"), // S2 Week 9
-        new Date("2024-09-30T00:00:00+10:00"), // Semester 2 Mid-semester break
-        new Date("2024-10-07T00:00:00+11:00"), // S2 Week 10 (and start of AEDT)
-        new Date("2024-10-14T00:00:00+11:00"), // S2 Week 11
-        new Date("2024-10-21T00:00:00+11:00"), // S2 Week 12
-        new Date("2024-10-28T00:00:00+11:00"), // S2 Week 13
-        new Date("2024-11-04T00:00:00+11:00"), // S2 STUVAC
-        new Date("2024-11-11T00:00:00+11:00"), // S2 Exam Period, Week 1
-        new Date("2024-11-18T00:00:00+11:00"), // S2 Exam Period, Week 2
-        new Date("2024-11-25T00:00:00+11:00"), // End of Semester 2
+        new Date("2025-08-04T00:00:00+10:00"), // S2 Week 1
+        new Date("2025-08-11T00:00:00+10:00"), // S2 Week 2
+        new Date("2025-08-18T00:00:00+10:00"), // S2 Week 3
+        new Date("2025-08-25T00:00:00+10:00"), // S2 Week 4
+        new Date("2025-09-01T00:00:00+10:00"), // S2 Week 5
+        new Date("2025-09-08T00:00:00+10:00"), // S2 Week 6
+        new Date("2025-09-15T00:00:00+10:00"), // S2 Week 7
+        new Date("2025-09-22T00:00:00+10:00"), // S2 Week 8
+        new Date("2025-09-29T00:00:00+10:00"), // Semester 2 Mid-semester break
+        new Date("2025-10-06T00:00:00+11:00"), // S2 Week 9 (and start of AEDT)
+        new Date("2025-10-13T00:00:00+11:00"), // S2 Week 10
+        new Date("2025-10-20T00:00:00+11:00"), // S2 Week 11
+        new Date("2025-10-27T00:00:00+11:00"), // S2 Week 12
+        new Date("2025-11-03T00:00:00+11:00"), // S2 Week 13
+        new Date("2025-11-10T00:00:00+11:00"), // S2 STUVAC
+        new Date("2025-11-17T00:00:00+11:00"), // S2 Exam Period, Week 1
+        new Date("2025-11-24T00:00:00+11:00"), // S2 Exam Period, Week 2
+        new Date("2025-12-01T00:00:00+11:00"), // End of Semester 2
     ];
 }
 
@@ -117,11 +117,11 @@ const getWeekName = (weekNumber) => {
             case 6:
                 return dayName + " of Week Six.";
             case 7:
-                return dayName + " of the Semester Recess.";
-            case 8:
                 return dayName + " of Week Seven.";
-            case 9:
+            case 8:
                 return dayName + " of Week Eight.";
+            case 9:
+                return dayName + " of the Semester Recess.";
             case 10:
                 return dayName + " of Week Nine.";
             case 11:
@@ -158,9 +158,9 @@ const getWeekName = (weekNumber) => {
             case 8:
                 return dayName + " of Week Eight.";
             case 9:
-                return dayName + " of Week Nine.";
-            case 10:
                 return dayName + " of the Semester Recess.";
+            case 10:
+                return dayName + " of Week Nine.";
             case 11:
                 return dayName + " of Week Ten.";
             case 12:
