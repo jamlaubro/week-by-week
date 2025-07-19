@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Semester Week</title>
+</head>
+<body>
+  <p style="border: 3px dashed black; padding: 10px; margin-top: 0px; margin-bottom: 0px; text-align: center; font-family: 'Lato', sans-serif; font-size: 14pt;" id="week-display"></p> 
+  <script> // [N.B: if you want to change how the box and text looks in terms of styling, do so in the line above]
+
+    const semesterStartDate = new Date("2025-02-24T00:00:00+11:00"); // enter the start date of the Semester in AEDT or AEST
+
+    const weekStartDates = [
+      new Date("2025-02-24T00:00:00+11:00"), // enter the start date of Week One
+      new Date("2025-03-03T00:00:00+11:00"), // enter the start date of Week Two
+      new Date("2025-03-10T00:00:00+11:00"), // enter the start date of Week Three
+      new Date("2025-03-17T00:00:00+11:00"), // enter the start date of Week Four
+      new Date("2025-03-24T00:00:00+11:00"), // enter the start date of Week Five
+      new Date("2025-03-31T00:00:00+11:00"), // enter the start date of Week Six
+      new Date("2025-04-07T00:00:00+10:00"), // enter the start date of Week Seven
+      new Date("2025-04-14T00:00:00+10:00"), // enter the start date of Week Eight
+      new Date("2025-04-21T00:00:00+10:00"), // enter the start date of the Semester Recess
+      new Date("2025-04-28T00:00:00+10:00"), // enter the start date of Week Nine
+      new Date("2025-05-05T00:00:00+10:00"), // enter the start date of Week Ten
+      new Date("2025-05-12T00:00:00+10:00"), // enter the start date of Week Eleven
+      new Date("2025-05-19T00:00:00+10:00"), // enter the start date of Week Twelve
+      new Date("2025-05-26T00:00:00+10:00"), // enter the start date of Week Thirteen
+      new Date("2025-06-02T00:00:00+10:00"), // enter the start date of STUVAC
+      new Date("2025-06-09T00:00:00+10:00"), // enter the start of Week One of the Exam Period
+      new Date("2025-06-16T00:00:00+10:00"), // enter the start of Week Two of the Exam Period
+      new Date("2025-06-23T00:00:00+10:00"), // enter the start of the following week (i.e. end of the Semester)
+    ];
+
+    const getWeekNumber = (date) => {
+      let weekNumber;
+      const time = date.getTime() - semesterStartDate.getTime();
+      if(date < weekStartDates[0]) weekNumber = -1; 
+      for(let i=0; i<18; i++){
+        if(date >= weekStartDates[i] && date < weekStartDates[i+1]) {
+          weekNumber = i+1;
+        }
+      } 
+      if(date > weekStartDates[17]) weekNumber = 18;
+      return weekNumber;
+    };
+
+    const getDayName = (dayNumber) => { // [N.B: in HTML format, the first day in the array is Sunday, but the counter will still name it correctly]
+      switch (dayNumber) {
+        case 0:
+          return "Sunday";
+        case 1:
+          return "Monday";
+        case 2:
+          return "Tuesday";
+        case 3:
+          return "Wednesday";
+        case 4:
+          return "Thursday";
+        case 5:
+          return "Friday";
+        case 6:
+          return "Saturday";
+      }
+    }
+
+    const getWeekName = (weekNumber) => { 
+      if (weekNumber < 0) {
+        return "it is before Semester One has started.";
+      } else if (weekNumber >= 18) {
+        return "it is after Semester One has finished.";
+      } else {
+      switch (weekNumber) {
+        case 1:
+          return "it is " + dayName + " of Week One.";
+        case 2:
+          return "it is " + dayName + " of Week Two.";
+        case 3:
+          return "it is " + dayName + " of Week Three.";
+        case 4:
+          return "it is " + dayName + " of Week Four.";
+        case 5:
+          return "it is " + dayName + " of Week Five.";
+        case 6:
+          return "it is " + dayName + " of Week Six.";
+        case 7:
+          return "it is " + dayName + " of Week Seven.";
+        case 8:
+          return "it is " + dayName + " of Week Eight.";
+        case 9:
+          return "it is " + dayName + " of the Semester Recess.";
+        case 10:
+          return "it is " + dayName + " of Week Nine.";
+        case 11:
+          return "it is " + dayName + " of Week Ten.";
+        case 12:
+          return "it is " + dayName + " of Week Eleven.";
+        case 13:
+          return "it is " + dayName + " of Week Twelve.";
+        case 14:
+          return "it is " + dayName + " of Week Thirteen.";
+        case 15:
+          return "it is " + dayName + " of STUVAC.";
+        case 16:
+          return "it is " + dayName + " of Week One of the Exam Period.";
+        case 17:
+          return "it is " + dayName + " of Week Two of the Exam Period.";
+        }
+      }
+    };
+    
+    const options = {timeZone: "Australia/Sydney"};
+    const sydneyDate = new Intl.DateTimeFormat("en-US", options).format(new Date());
+    const currentDate = new Date(sydneyDate);
+    const dayNumber = currentDate.getDay();
+    const dayName = getDayName(dayNumber);
+    const weekNumber = getWeekNumber(currentDate);
+    const weekName = getWeekName(weekNumber);
+    document.getElementById("week-display").innerHTML = "When is it? Right now, " + weekName; // [N.B: if you want to change the text preceding the counter, do so here]
+  </script>
+</body>
+</html>
